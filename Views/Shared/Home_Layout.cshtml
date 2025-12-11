@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Home_Layout";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My Website</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="/">My Website</a>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="container mt-5">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+        <small>Build with ❤️ by Mohamed Farag</small>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

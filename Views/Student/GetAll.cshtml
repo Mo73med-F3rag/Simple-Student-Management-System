@@ -1,0 +1,50 @@
+﻿@using MVC_Day4.Models
+@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1 style="color: darkblue;">Students 👨‍🎓👩‍🎓</h1>
+
+<a asp-controller="Student" asp-action="Create" class="btn btn-primary mb-3">Create Student</a>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(e => e.Id)</th>
+            <th>@Html.DisplayNameFor(e => e.Name)</th>
+            <th>@Html.DisplayNameFor(e => e.Age)</th>
+            <th>@Html.DisplayNameFor(e => e.Email)</th>
+            <th>@Html.DisplayNameFor(e => e.Address)</th>
+            <th>@Html.DisplayNameFor(e => e.Password)</th>
+            <th>@Html.DisplayNameFor(e => e.Department)</th>
+            <th>Details Action</th>
+            <th>Edit Action</th>
+            <th>Delete Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>@item.Password</td>
+                <td>@item.Department?.Name</td>
+                <td>
+                    <a asp-controller="Student" asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                </td>
+                <td>
+                    <a asr-controller="Student" asp-action="Edit" asp-route-id ="@item.Id" class ="btn btn-info btn-sm"> Edit </a>
+                </td>
+                <td>
+                    <a asr-controller="Student" asp-action="Delete" asp-route-id ="@item.Id" class ="btn btn-info btn-sm" onclick="return confirm ('are you sure delete @item.Name');"> Delete </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

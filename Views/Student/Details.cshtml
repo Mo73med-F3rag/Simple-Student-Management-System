@@ -1,0 +1,22 @@
+﻿@using MVC_Day4.Models
+@model Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 style="color: darkblue;">Details of Student</h2>
+
+<div class="card" style="width: 20rem;">
+    <div class="card-body">
+        <h4>Id: @Model.Id</h4>
+        <h4>@Html.DisplayNameFor(e => e.Name): @Model.Name</h4>
+        <h4>@Html.DisplayNameFor(e => e.Age): @Model.Age</h4>
+        <h4>@Html.DisplayNameFor(e => e.Address): @Model.Address</h4>
+        <h4>@Html.DisplayNameFor(e => e.Email): @Model.Email</h4>
+        <h4>@Html.DisplayNameFor(e => e.Password): @Model.Password</h4>
+        <h4>Department: @Model.Department?.Name</h4>
+
+        <a asp-action="GetAll" class="btn btn-primary mt-3">Back to list</a>
+    </div>
+</div>

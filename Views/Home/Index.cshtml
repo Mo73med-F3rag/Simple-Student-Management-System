@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+     Layout = "Home_Layout";
+}
+
+
+
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+    <div class="text-center">
+
+        <!-- رسالة ترحيب -->
+        <h1 class="mb-4 text-primary fw-bold">✨ Welcome in My Website ✨</h1>
+        <p class="text-muted mb-5 fs-5">We’re glad to have you here!</p>
+
+        <!-- زرارين Register & Login -->
+        <div class="mb-4">
+            <a asp-controller="User" asp-action="Register" class="btn btn-lg btn-outline-primary px-5 me-3 rounded-pill shadow">
+                📝 Register
+            </a>
+
+            <a asp-controller="User" asp-action="Login" class="btn btn-lg btn-success px-5 rounded-pill shadow">
+                🔑 Login
+            </a>
+        </div>
+
+        <!-- مسدج تحت الزرارين -->
+        <p class="mt-3 fs-6 text-dark">
+            If you already have an account, <strong>Login</strong>.<br />
+            If not, <strong>Register</strong> and join us today!
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+

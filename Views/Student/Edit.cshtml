@@ -1,0 +1,55 @@
+﻿@using MVC_Day4.Models
+
+@model Student 
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="color: darkblue;">Edit Student</h1>
+
+
+<form method="post" action="/Student/Edit" class="w-50 mx-auto mt-4">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+
+    <!-- DropDownList للقسم -->
+    <div class="mb-3">
+        <label asp-for="DeptId" class="form-label">Department</label>
+        <select asp-for="DeptId" asp-items="ViewBag.depts" class="form-select">
+            <option value="">-- Select Department --</option>
+        </select>
+    </div>
+
+    <div class="d-flex gap-2">
+        <input type="submit" value="Edit" class="btn btn-success form-control" />
+        <a href="/Student/GetAll" class="btn btn-secondary form-control">Cancel</a>
+    </div>
+</form>
+
+
+
